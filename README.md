@@ -1,6 +1,6 @@
-# Hackerrank-Ruby
+# Hackerrank-Solutions
 
-> Solutions of Hackerrank challenges in Ruby programming languages
+> Solutions of Hackerrank challenges in Ruby programming languag
 
 ![image](https://user-images.githubusercontent.com/55923773/75998427-ce798100-5f3b-11ea-8c85-69fa86f0a84f.png)
 
@@ -36,4 +36,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](https://github.com/Kyle-Law/hackerrank-solutions/blob/master/LICENSE) licensed.
