@@ -724,6 +724,52 @@ end
 
 #Key takeaway: 1st, In each_with_index {|v,i|}, you can't modify the element with v, must use array[i]= xxx to modify it; 2nd, #all?(:even?) doesn't work; 3rd, it could be solved using i+1 / i-1, not necessary to utilize both.
 
+def flatlandSpaceStations(n, c)
+    arr = Array.new(n)
+    c.each{|i| arr[i] = 0}
+    arr.each_index do |i|
+        if arr[i] != 0
+            distance = []
+            c.each{|j| distance << (i-j).abs}
+            arr[i] = distance.min
+        end
+    end
+    arr.max
+end
+# 19/20 test cases solved. The last one couldn't be solved due to timeout. Are there any possibility to refactor it or if there's any mathematical relationship?
+
+#2nd try: 
+def flatlandSpaceStations(n, c)
+    arr = Array.new(n)
+    max = 0
+    arr.each_index do |i|
+        distance = []
+        c.each{|j| distance << (i-j).abs}
+        max = distance.min if distance.min>max
+    end
+    max
+end
+#Same problem. n(2) complexity can't pass the time limit.
+
+#3rd try: 
+def flatlandSpaceStations(n, c)
+    arr = Array.new(n,1)
+    c.each{|i| arr[i] = 0}
+    arr.each_index do |i|
+        if arr[i] != 0 || arr[i] != 1
+            distance = []
+            c.each{|j| distance << (i-j).abs}
+            arr[i] = distance.min
+        end
+    end
+    arr.max
+end
+
+# Same time limit problem.
+
+
+# p Array.new(6)
+
 # p [2].all? {|i| i.even?}
 
 # def workbook_helper(limit, n) #problem per page, problems per chapter
