@@ -916,3 +916,40 @@ end
 # Difficulty: 1/5
 # Key takeaway: Try to do the challenges stated in the description? 
 
+# Insertion Sort 1 can't be solved because of faulty output. https://www.hackerrank.com/challenges/insertionsort1/problem
+
+## Correctness and the Loop Invariant
+# https://www.hackerrank.com/challenges/correctness-invariant/problem
+# Finding Error in a given method
+def  insertionSort(ar)
+    i = 1
+    while (i < ar.length)
+        if (i > 0 && ar[i] < ar[i - 1])
+            value = ar[i]
+            j = i-1
+            while (j >= 0 && value < ar[j])
+                ar[j+1] = ar[j]
+                j -= 1
+            end
+            ar[j+1] = value
+        end
+        i += 1
+    end
+    puts ar.join(" ")
+end
+
+# insertionSort([4,1,3,5,6,2])
+# Solution: Just a simple change from `while (j > 0 && ...` to `while (j >= 0 &&...`
+
+def insertionSort2(n, arr)
+    i = 0
+    while i < arr.length-1
+        arr[i], arr[i+1] = arr[i+1], arr[i] if arr[i] > arr[i+1]
+        i +=1
+        p arr
+    end
+end
+
+# insertionSort2(6,[1,4,3,5,6,2])
+
+# Come back to this later.
