@@ -882,7 +882,7 @@ end
 # Key takeaway: One of the easiest questions I ever got.
 # Methods Used: #map(&:to_i) , #sort
 
-# Super Reduced String
+## Super Reduced String
 # https://www.hackerrank.com/challenges/reduced-string/problem
 def superReducedString(s)
     arr = s.split('')
@@ -907,4 +907,12 @@ end
 # Difficulty: 2.5/5
 # Key takeaway: Be careful of indexing, aside of that, the logic is straightforward.
 # Methods Used: #delete_at(index),#split(''),#join, #empty? 
+
+## Intro to Tutorial Challenges
+# https://www.hackerrank.com/challenges/tutorial-intro/problem
+def introTutorial(v, arr)
+    arr.index(v)
+end
+# Difficulty: 1/5
+# Key takeaway: Try to do the challenges stated in the description? 
 
