@@ -791,3 +791,25 @@ end
 
 # Key takeaway: Array.new(n,c) => building an array with n length, each takes value of c. Array.new(n) {|i| i} => |i| block variable refers to index (i.e. 0..n), eg. Array.new(5){|i| i} => [0,1,2,3,4]. #n.times {|i| puts i}, |i| in #times refers to index as well (i.e. 0..n).  I created a multi-array representing pages and their respective questions.
 # Methods used: #each_with_index, #include?, #Array.new, #ceil, #times
+
+def cavityMap(grid)
+    result = []
+    grid.each_with_index do |string,i|
+        ar = string.split('').map(&:to_i)
+        max_horizontally = ar.max
+        unless i == 0 || i == grid.length-1
+            for j in 1..ar.length-2
+                ar[j] = 100 if ar[j] > ar[j+1] && ar[j] > ar[j-1] && ar[j]> grid[i-1][j].to_i && ar[j] > grid[i+1][j].to_i
+            end
+            ar.each_index{|i| ar[i] = 'X' if ar[i] == 100 }
+        end
+        result << ar
+    end
+    result.map{|i| i.join}
+end
+# p cavityMap(["1112","1912","1892","1234"]) #passed
+# p cavityMap(["9999","9999"]) #=> same.
+# p "1234".split('').map(&:to_i).join
+
+# Key takeaway: It required clear understanding about the inputs, also the indexing. The input format is ["1234","5678"], so I've to split and convert them into arrays of integer in order to compare between them. Also, I can't set it to 'X' immediately upon comparison because it may affect others, hence I set it as 100(or any integer above 9) and change it to 'X' later.
+# Used methods: #each_with_index, #split, #map(&:to_i), #each_index, #map, #join
