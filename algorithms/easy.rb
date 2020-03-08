@@ -848,3 +848,28 @@ end
 # p happyLadybugs('RRGGBBXX')
 # Key takeaway: Instead of running through the process, think of cases when it would be 'NO' (Which only 2 cases). The logic is, as long as there's a '_', and count(ele)>1, they will be happy.
 # Methods Used: #count, #split, #length, #each_with_index
+
+
+
+def strangeCounter(t)
+    start = 3
+    round = 3**n
+    #step 1: determine round
+    #step 2: starting at round n = 3**n
+    # step 3: find remainder, and count from there.
+    # integer
+    # 1=> 3, 2=>2, 1=>1, 4=>3**2, 5 => 3**2 - 1...,
+end
+
+def strangeCounter(t)
+    round = 0
+    for i in 0..Float::INFINITY
+        break if t-3*2**i<=0
+        t -= 3*2**i
+        round+=1
+    end
+    3*2**round+1-t
+end
+# p strangeCounter(9)
+# Key takeaway: A very counterintuitive question. It requires the user to find out the mathematical relationship (first number = 3*2**round). More of a maths question than testing your coding skills? Float::INFINITY to represent infinitely large value that 'i' could be.
+# Methods Used: #Float::INFINITY , 
