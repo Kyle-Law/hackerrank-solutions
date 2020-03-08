@@ -861,6 +861,8 @@ def strangeCounter(t)
     # 1=> 3, 2=>2, 1=>1, 4=>3**2, 5 => 3**2 - 1...,
 end
 
+#Strange Counter, Success Rate 78.81%
+#https://www.hackerrank.com/challenges/strange-code/problem
 def strangeCounter(t)
     round = 0
     for i in 0..Float::INFINITY
@@ -872,4 +874,14 @@ def strangeCounter(t)
 end
 # p strangeCounter(9)
 # Key takeaway: A very counterintuitive question. It requires the user to find out the mathematical relationship (first number = 3*2**round). More of a maths question than testing your coding skills? Float::INFINITY to represent infinitely large value that 'i' could be.
-# Methods Used: #Float::INFINITY , 
+# Methods Used: #Float::INFINITY
+
+# Big Sorting, Success Rate: 63.29%
+# Consider an array of numeric strings where each string is a positive number with anywhere from  to  digits. Sort the array's elements in non-decreasing, or ascending order of their integer values and print each element of the sorted array on a new line.
+# https://www.hackerrank.com/challenges/big-sorting/problem
+def bigSorting(unsorted)
+    unsorted.map(&:to_i).sort
+end
+# Key takeaway: One of the easiest questions I ever got.
+# Methods Used: #map(&:to_i) , #sort
+
