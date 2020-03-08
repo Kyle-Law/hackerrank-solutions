@@ -832,3 +832,19 @@ end
 # p [1,2].repeated_permutation(3).to_a => [[1, 1, 1], [1, 1, 2], [1, 2, 1], [1, 2, 2], [2, 1, 1], [2, 1, 2], [2, 2, 1], [2, 2, 2]]
 
 
+# p "DD__FQ_QQF".split('').sort
+def happyLadybugs(b)
+    arr = b.split('')
+    i = 1
+    arr.each{|i| return 'NO' if arr.count(i)<2 && i != '_'} #check if friend exists
+    arr.each_with_index do |v,i| 
+        unless i == 0 || i == arr.length-1
+           return 'NO' if  arr.count('_')==0 && !(v==arr[i+1] || v== arr[i-1])
+        end
+    end
+    'YES'
+end
+
+# p happyLadybugs('RRGGBBXX')
+# Key takeaway: Instead of running through the process, think of cases when it would be 'NO' (Which only 2 cases). The logic is, as long as there's a '_', and count(ele)>1, they will be happy.
+# Methods Used: #count, #split, #length, #each_with_index
