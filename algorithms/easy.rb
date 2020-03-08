@@ -657,6 +657,7 @@ end
 
 # kaprekarNumbers(1,100)
 
+# Difficulty: 3.5/5
 # Key takeaway: Be careful with the output format; #join is the opposite of split(joining array into string); 
 # Used methods: #map, #split, #size, #each_with_index, #to_i
 
@@ -666,7 +667,8 @@ def beautifulTriplets(d, arr)
     triplets.length
 end
 
-#1 try KO but runtime error. Find mathematical relationship I guess? 
+# 1 try KO but runtime error. Find mathematical relationship I guess? 
+# Difficulty: 1/5 if runtime is not considered, 4/5 if considered.
 
 def minimumDistances(a)
     distances = []
@@ -676,6 +678,7 @@ def minimumDistances(a)
 end
 
 # p minimumDistances([7,1,3,4,1,7])
+# Difficulty: 2.5/5
 # Key takeaway `duplicates = a-a.uniq` won't work. First time utilize #rindex to find out the last index of the item. 
 # Used methods: #select, #count, #uniq,  #rindex, #index, #empty?, #min
 
@@ -691,6 +694,7 @@ def howManyGames(p, d, m, s)
     answer.size - 1
 end
 
+# Difficulty: 2.5/5
 # howManyGames(20,3,6,85)
 # Key Takeaway: Be careful using ternary operator. array << condition ? true : false doesn't work  => condition ? array << true : array << false
 
@@ -704,6 +708,7 @@ def chocolateFeast(n, c, m)
     chocolates
 end
 
+# Difficulty: 2/5
 # Key takeaway: a,b = x,y to assign multiple variable at a time. (a,b = [x,y] works as well.) ; #pop is a destructive method (modify the array)
 
 # Service Lane can't be solved because of missing inputs (array of width). Given n & entry-exit 2d-array only.
@@ -722,7 +727,8 @@ def fairRations(b)
 end
 # p fairRations([2,3,4,5,6])
 
-#Key takeaway: 1st, In each_with_index {|v,i|}, you can't modify the element with v, must use array[i]= xxx to modify it; 2nd, #all?(:even?) doesn't work; 3rd, it could be solved using i+1 / i-1, not necessary to utilize both.
+# Difficulty: 2/5
+# Key takeaway: - In each_with_index {|v,i|}, you can't modify the element with v, must use array[i]= xxx to modify it; - #all?(:even?) doesn't work; - It could be solved using i+1 / i-1, not necessary to utilize both.
 
 def flatlandSpaceStations(n, c)
     arr = Array.new(n)
@@ -765,6 +771,8 @@ def flatlandSpaceStations(n, c)
     arr.max
 end
 # Same time limit problem.
+
+# Difficulty: 5/5 
 # Key takeaway: 19/20 done. Try to refactor your code, think of a way without using 2 loops :)
 # Methods used: #min, #abs, #Array.new, #each_index
 
@@ -789,6 +797,7 @@ end
 
 # p workbook(5,3,[4,2,6,1,10]) #=> 4
 
+# Difficulty: 4.5/5
 # Key takeaway: Array.new(n,c) => building an array with n length, each takes value of c. Array.new(n) {|i| i} => |i| block variable refers to index (i.e. 0..n), eg. Array.new(5){|i| i} => [0,1,2,3,4]. #n.times {|i| puts i}, |i| in #times refers to index as well (i.e. 0..n).  I created a multi-array representing pages and their respective questions.
 # Methods used: #each_with_index, #include?, #Array.new, #ceil, #times
 
@@ -811,20 +820,16 @@ end
 # p cavityMap(["9999","9999"]) #=> same.
 # p "1234".split('').map(&:to_i).join
 
+# Difficulty: 4.5/5
 # Key takeaway: It required clear understanding about the inputs, also the indexing. The input format is ["1234","5678"], so I've to split and convert them into arrays of integer in order to compare between them. Also, I can't set it to 'X' immediately upon comparison because it may affect others, hence I set it as 100(or any integer above 9) and change it to 'X' later.
 # Used methods: #each_with_index, #split, #map(&:to_i), #each_index, #map, #join
-
-def possibilities(a,b)
-    arr = [a,b].permutation(2).to_a
-    arr += [[a,a],[b,b]]
-    arr
-end
 
 def stones(n, a, b)
     choices = [a,b]
     choices.repeated_combination(n-1).to_a.map{|i|i.sum}.uniq.sort
 end
 
+# Difficulty: 3/5
 # Key takeaway: First occurence of #repeated_combination. #repeated_combination is better than #repeated_permutation in this case because it removes duplicated end-result (Check example below for differences.) But somehow, #uniq is still required...
 # Methods Used: #repeated_combination, #to_a, #map, #uniq, #sort
 
@@ -846,22 +851,11 @@ def happyLadybugs(b)
 end
 
 # p happyLadybugs('RRGGBBXX')
+# Difficulty: 3/5
 # Key takeaway: Instead of running through the process, think of cases when it would be 'NO' (Which only 2 cases). The logic is, as long as there's a '_', and count(ele)>1, they will be happy.
 # Methods Used: #count, #split, #length, #each_with_index
 
-
-
-def strangeCounter(t)
-    start = 3
-    round = 3**n
-    #step 1: determine round
-    #step 2: starting at round n = 3**n
-    # step 3: find remainder, and count from there.
-    # integer
-    # 1=> 3, 2=>2, 1=>1, 4=>3**2, 5 => 3**2 - 1...,
-end
-
-#Strange Counter, Success Rate 78.81%
+## Strange Counter, Success Rate 78.81%
 #https://www.hackerrank.com/challenges/strange-code/problem
 def strangeCounter(t)
     round = 0
@@ -873,15 +867,44 @@ def strangeCounter(t)
     3*2**round+1-t
 end
 # p strangeCounter(9)
+
+# Difficulty: 4/5
 # Key takeaway: A very counterintuitive question. It requires the user to find out the mathematical relationship (first number = 3*2**round). More of a maths question than testing your coding skills? Float::INFINITY to represent infinitely large value that 'i' could be.
 # Methods Used: #Float::INFINITY
 
-# Big Sorting, Success Rate: 63.29%
+## Big Sorting, Success Rate: 63.29%
 # Consider an array of numeric strings where each string is a positive number with anywhere from  to  digits. Sort the array's elements in non-decreasing, or ascending order of their integer values and print each element of the sorted array on a new line.
 # https://www.hackerrank.com/challenges/big-sorting/problem
 def bigSorting(unsorted)
     unsorted.map(&:to_i).sort
 end
+# Difficulty: 1/5
 # Key takeaway: One of the easiest questions I ever got.
 # Methods Used: #map(&:to_i) , #sort
+
+# Super Reduced String
+# https://www.hackerrank.com/challenges/reduced-string/problem
+def superReducedString(s)
+    arr = s.split('')
+    i = 1
+    while i < arr.length
+        # p i
+        if arr[i] == arr[i+1]
+            arr.delete_at(i)
+            arr.delete_at(i)
+            i-=1
+        elsif arr[i] == arr[i-1] && i != 0
+            arr.delete_at(i-1)
+            arr.delete_at(i-1)
+            i-=2
+        end
+        i+=1
+    end
+    arr.empty? ? 'Empty String' : arr.join
+end
+
+# p superReducedString
+# Difficulty: 2.5/5
+# Key takeaway: Be careful of indexing, aside of that, the logic is straightforward.
+# Methods Used: #delete_at(index),#split(''),#join, #empty? 
 
