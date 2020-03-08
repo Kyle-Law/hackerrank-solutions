@@ -813,3 +813,22 @@ end
 
 # Key takeaway: It required clear understanding about the inputs, also the indexing. The input format is ["1234","5678"], so I've to split and convert them into arrays of integer in order to compare between them. Also, I can't set it to 'X' immediately upon comparison because it may affect others, hence I set it as 100(or any integer above 9) and change it to 'X' later.
 # Used methods: #each_with_index, #split, #map(&:to_i), #each_index, #map, #join
+
+def possibilities(a,b)
+    arr = [a,b].permutation(2).to_a
+    arr += [[a,a],[b,b]]
+    arr
+end
+
+def stones(n, a, b)
+    choices = [a,b]
+    choices.repeated_combination(n-1).to_a.map{|i|i.sum}.uniq.sort
+end
+
+# Key takeaway: First occurence of #repeated_combination. #repeated_combination is better than #repeated_permutation in this case because it removes duplicated end-result (Check example below for differences.) But somehow, #uniq is still required...
+# Methods Used: #repeated_combination, #to_a, #map, #uniq, #sort
+
+# p [1,2].repeated_combination(3).to_a => [[1, 1, 1], [1, 1, 2], [1, 2, 2], [2, 2, 2]]
+# p [1,2].repeated_permutation(3).to_a => [[1, 1, 1], [1, 1, 2], [1, 2, 1], [1, 2, 2], [2, 1, 1], [2, 1, 2], [2, 2, 1], [2, 2, 2]]
+
+
