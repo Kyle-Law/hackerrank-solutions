@@ -1,9 +1,12 @@
 # Hackerrank-Solutions
 
-> Solutions of Hackerrank challenges in Ruby programming languag
+> Solutions of Hackerrank challenges in Ruby programming language
 
 ![image](https://user-images.githubusercontent.com/55923773/75998427-ce798100-5f3b-11ea-8c85-69fa86f0a84f.png)
 
+## Number of Algorithms Solved
+- Hackerrank: 60
+- Exercism: 7
 
 
 ## Built With

@@ -940,16 +940,3 @@ end
 
 # insertionSort([4,1,3,5,6,2])
 # Solution: Just a simple change from `while (j > 0 && ...` to `while (j >= 0 &&...`
-
-def insertionSort2(n, arr)
-    i = 0
-    while i < arr.length-1
-        arr[i], arr[i+1] = arr[i+1], arr[i] if arr[i] > arr[i+1]
-        i +=1
-        p arr
-    end
-end
-
-# insertionSort2(6,[1,4,3,5,6,2])
-
-# Come back to this later.
