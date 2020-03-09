@@ -940,3 +940,21 @@ end
 
 # insertionSort([4,1,3,5,6,2])
 # Solution: Just a simple change from `while (j > 0 && ...` to `while (j >= 0 &&...`
+
+## Strong Password
+# https://www.hackerrank.com/challenges/strong-password/problem
+def minimumNumber(n, password)
+    # Return the minimum number of characters to make the password strong
+    m = 0
+    m+=1 unless /[0-9]/ =~ password
+    m+=1 unless /[a-z]/ =~ password
+    m+=1 unless /[A-Z]/ =~ password
+    m+=1 unless /[@!\#$%^&*()\-+]/ =~ password
+    
+    return [m,6-n].max
+end
+# Difficulty: 5/5
+# Key takeaway: It requires thorough understanding of Regex. For example, =~ is a method that could be called upon a regex to string as parameter, return the index of regex that found in string, nil if couldn't be found.
+# Methods: =~, max
+
+# p /[0-9]/ =~ "asdf1"
