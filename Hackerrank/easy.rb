@@ -957,4 +957,10 @@ end
 # Key takeaway: It requires thorough understanding of Regex. For example, =~ is a method that could be called upon a regex to string as parameter, return the index of regex that found in string, nil if couldn't be found.
 # Methods: =~, max
 
-# p /[0-9]/ =~ "asdf1"
+# p 'hehe' if /[0-9]/ =~ "asdf1"
+
+# p "hehe" if /^(https:\/\/www.remote.io\/remote-jobs\?)/ =~ "//https://www.remote.io/remote-jobs?s=javascript,ruby,ruby-on-rails"
+# p 7 % 20
+# p (1..10).to_a.include?("123".split(''))
+# p "123".split('').map(&:to_i).all?{|i| i<10}
+p "\nSoftware Engineer - Machine Learning (Remote)"
