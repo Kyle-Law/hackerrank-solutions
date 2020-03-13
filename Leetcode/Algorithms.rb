@@ -19,7 +19,7 @@ end
 # p Array.new(5) {|i| i+=5}
 # 5.times{|i| p i}
 
-# HackTheInterview Global Challenge 2 - Maximum Streaks
+# HackTheInterview Global Challenge 2 Q2 - Maximum Streaks
 
 def getMaxStreaks(toss)
     # Return an array of two integers containing the maximum streak of heads and tails respectively
@@ -29,3 +29,20 @@ def getMaxStreaks(toss)
 end
 
 # Key takeaway: #join and #split to find maximum consecutive length. Brilliant!
+
+# HackTheInterview Global Challenge 2, Q3 - Determine the Winner
+
+def getRoundResult(winning_suit, suit1, number1, suit2, number2)
+    # Write your code here
+    return 'Player 1 wins' if suit1 == winning_suit && suit2 != winning_suit
+    return 'Player 2 wins' if suit2 == winning_suit && suit1 != winning_suit
+    if (suit1 == winning_suit && suit2 == winning_suit) || (suit1 != winning_suit && suit2 != winning_suit)
+        if number1 > number2
+            return 'Player 1 wins'
+        elsif number2 > number1
+            return 'Player 2 wins'
+        else
+            return 'Draw'
+        end
+    end
+end
