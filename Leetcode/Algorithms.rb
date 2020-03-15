@@ -19,3 +19,25 @@ end
 # p Array.new(5) {|i| i+=5}
 # 5.times{|i| p i}
 
+# p [1,2,3] & [3,4,5]
+
+# @param {Integer[][]} matrix
+# @return {Integer[]}
+
+# Lucky Numbers in a Matrix
+# Given a m * n matrix of distinct numbers, return all lucky numbers in the matrix in any order.
+
+# A lucky number is an element of the matrix such that it is the minimum element in its row and maximum in its column.
+def lucky_numbers (matrix)
+    min_rows = matrix.map{|ar| ar.min}
+    max_cols = []
+    i = 0
+    while i < matrix[0].length do
+        empty=[]
+        matrix.each{|ar| empty << ar[i]}
+        max_cols << empty
+        i+=1
+    end
+    max_cols = max_cols.map{|ar| ar.max}
+    max_cols & min_rows
+end
