@@ -306,21 +306,25 @@ def pageCount(n, p)
         return 0 if p == n-1
         min_distance = [pages_arr[2..p].size,pages_arr[p..n].size].min
         flip = (min_distance.to_f/2).ceil
-        return 0 if p == n-1
     end
     flip
 end
+
 # Key takeaway: this is insane. I passed without know what's going on.
 # test n=6,p=5 failed on the first method. 
 # From above, we could see patterns like finding flip using distance..
 
-#Example answer (but failed on pageCount(6,5)):
-# if p == 1 || p == n
-#     puts 0
-# else
-#     b = p / 2 (pages turn from page 1 is always p/2)
-#     e = (n - p) / 2 (pages turn from the end is (n-p)/2, if n is odd... (n-p+1)/2 if n is even...)
-#     puts b < e ? b : e
+#Example answer:
+# def pageCount(n, p)
+#     if p == 1 || p == n
+#       return 0
+#     elsif n.even? && n - p == 1
+#       return 1
+#     else
+#       b = p / 2
+#       e = (n - p) / 2
+#       return b < e ? b : e
+#     end
 # end
 
 #Extremely simple solution in Python:
