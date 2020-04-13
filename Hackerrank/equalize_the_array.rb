@@ -9,3 +9,13 @@ def equalizeArray(arr)
 end
 
 #Key takeaway: max_occurences helper method is pretty helpful when solving this algo.
+
+# Solution by classmate Alex
+def equalizeArray(arr)
+    max = 0
+    arr.each do |i|
+        count = arr.count(i)
+        max = count if count > max
+    end
+    arr.size - max
+end
