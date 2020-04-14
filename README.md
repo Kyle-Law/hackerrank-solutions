@@ -1,4 +1,5 @@
 # Hackerrank-Solutions
+[![Run on Repl.it](https://repl.it/badge/github/Kyle-Law/hackerrank-solutions)](https://repl.it/github/Kyle-Law/hackerrank-solutions)
 
 > Solutions of Hackerrank challenges in Ruby programming language
 
