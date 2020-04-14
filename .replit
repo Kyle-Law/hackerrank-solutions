@@ -1,2 +1,2 @@
 language = "ruby"
-run = "ruby ./Codewars/to_camel_case.rb"
+run = "ruby ./Codewars/disemvovel_trolls.rb"
