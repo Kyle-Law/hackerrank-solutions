@@ -19,3 +19,4 @@ end
 #     e = (n - p) / 2
 #     return b < e ? b : e
 #   end
+
