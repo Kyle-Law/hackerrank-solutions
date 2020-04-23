@@ -1,5 +1,5 @@
 def encryption(s)
-    clean_s = s.gsub(/\s+/, '')
+    clean_s = s.strip
     s_length = clean_s.size
     ceil = (s_length**0.5).ceil 
     floor = (s_length**0.5).floor
@@ -10,10 +10,10 @@ def encryption(s)
     tranpose_grid = grid.transpose
     result = ''
     tranpose_grid.each do |ar|
-        string = ar.join.gsub(/\s+/, '')
+        string = ar.join.strip
         result << string + ' '
     end
     result
 end
 
-Key takeaway: tranpose can only be work on matrix with same row and column; each_slice can be used on array to turn array into matrix based on column restriction.
+# Key takeaway: tranpose can only be work on matrix with same row and column; each_slice can be used on array to turn array into matrix based on column restriction.
