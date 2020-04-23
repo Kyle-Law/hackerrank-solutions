@@ -1,2 +1,2 @@
 language = "ruby"
-run = ""
+run = "ruby ./Codewars/disemvovel_trolls.rb"
