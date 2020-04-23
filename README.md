@@ -7,7 +7,8 @@
 
 ## Number of Algorithms Solved
 - Hackerrank: 60
-- Exercism: 7
+- Exercism: 8
+- LeetCode: 4
 
 
 ## Built With
