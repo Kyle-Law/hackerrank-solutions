@@ -6,9 +6,9 @@
 ![image](https://user-images.githubusercontent.com/55923773/75998427-ce798100-5f3b-11ea-8c85-69fa86f0a84f.png)
 
 ## Number of Algorithms Solved
-- Hackerrank: 60
+- Hackerrank: 64
 - Exercism: 8
-- LeetCode: 4
+- LeetCode: 6
 
 
 ## Built With
