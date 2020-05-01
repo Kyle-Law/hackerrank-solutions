@@ -18,3 +18,17 @@ end
 # Difficulty: 4.5/5
 # Key takeaway: Array.new(n,c) => building an array with n length, each takes value of c. Array.new(n) {|i| i} => |i| block variable refers to index (i.e. 0..n), eg. Array.new(5){|i| i} => [0,1,2,3,4]. #n.times {|i| puts i}, |i| in #times refers to index as well (i.e. 0..n).  I created a multi-array representing pages and their respective questions.
 # Methods used: #each_with_index, #include?, #Array.new, #ceil, #times
+
+# Alex's answer
+def workbook(n,k,arr)
+  page = 1
+  count = 0
+  arr.each do |i|
+    (1..i).each do |j|
+      count+=1 if j==page
+      page +=1 if j%k == 0
+    end
+    page +=1 if i%k != 0
+  end
+  count
+end
