@@ -18,7 +18,7 @@
 #                 s[i..i+m-1].each do |item|
 #                     sum += item              
 #                 end
-#                 p s[i..i+m-1]
+#                 p s[i..i+m-1]x
 #             end
 #             count += 1 if sum == d
 #         end
